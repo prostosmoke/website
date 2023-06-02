@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet"  type="text/css" href="{{ url_for('static', filename='m.css')}}">
+</head>
+
+<form method ="POST", action="quiz">
+    <input type="text" name="hello">
+    <button>Сохранить</button>
+</form> 
+
+<h1>Список викторин:</h1>
+{{session['counter']}}
+<!--<img src = "{{ url_for('static', filename='11111.jpeg')}}">-->
+<ol>
+    {% for i in quizes %}
+        <li><a href = '/quiz?id={{i[0]}}'>{{i[1]}}</a></li>
+    {% endfor %}
+</ol>
